@@ -4,6 +4,7 @@ import StatsCardGrid from '../components/Dashboard/StatsCardGrid';
 import RevenueChart from '../components/Dashboard/RevenueChart';
 import LeadsLostReasons from '../components/Dashboard/LeadsLostReasons';
 import OtherStatsCard from '../components/Dashboard/OtherStatsCard';
+import { ThemeProvider } from '../components/ThemeProvider';
 
 /**
  * The main dashboard page for the Lead Management Dashboard application.
@@ -17,21 +18,23 @@ import OtherStatsCard from '../components/Dashboard/OtherStatsCard';
  */
 const IndexPage: React.FC = () => {
   return (
-    <MainAppLayout>
-      <div className="space-y-6">
-        {/* Top row: Funnel count and Sources pie chart */}
-        <StatsCardGrid />
+    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <MainAppLayout>
+        <div className="space-y-6">
+          {/* Top row: Funnel count and Sources pie chart */}
+          <StatsCardGrid />
 
-        {/* Middle row: Main leads tracking line chart */}
-        <RevenueChart />
+          {/* Middle row: Main leads tracking line chart */}
+          <RevenueChart />
 
-        {/* Bottom row: Reasons for lost leads and other miscellaneous data */}
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <LeadsLostReasons />
-          <OtherStatsCard />
+          {/* Bottom row: Reasons for lost leads and other miscellaneous data */}
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+            <LeadsLostReasons />
+            <OtherStatsCard />
+          </div>
         </div>
-      </div>
-    </MainAppLayout>
+      </MainAppLayout>
+    </ThemeProvider>
   );
 };
 
