@@ -48,7 +48,6 @@
   }
 
   .dark {
-    /* Dark mode is not specified in the PRD, preserving original values as a fallback */
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
 
